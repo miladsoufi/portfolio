@@ -1,0 +1,5 @@
+const switcher=document.getElementById('langSwitch');let lang='fa';
+switcher.addEventListener('click',()=>{lang=lang==='fa'?'en':'fa';document.body.classList.toggle('en',lang==='en');document.documentElement.lang=lang;document.documentElement.dir=lang==='fa'?'rtl':'ltr';document.querySelectorAll('[data-fa][data-en]').forEach(el=>el.innerHTML=el.dataset[lang]);switcher.textContent=lang==='fa'?'EN / FA':'FA / EN';});
+const menu=document.getElementById('menuToggle'),nav=document.querySelector('.nav');menu.addEventListener('click',()=>nav.classList.toggle('open'));nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+document.getElementById('year').textContent=new Date().getFullYear();
+document.getElementById('emailLink').addEventListener('click',e=>{if(e.currentTarget.getAttribute('href')==='mailto:hello@example.com'){e.preventDefault();alert('آدرس ایمیل نمونه است. پیش از انتشار، ایمیل واقعی خودت را جایگزین کن.');}});
